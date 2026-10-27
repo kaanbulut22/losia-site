@@ -1,0 +1,56 @@
+<!doctype html>
+<!--
+  Share preview source. Render at 1200x630 with a headless browser:
+    msedge --headless=new --window-size=1200,630 --screenshot=assets/og-tr.png http://127.0.0.1:8765/_tools/og.html?lang=tr
+  The leading underscore keeps this folder out of the published GitHub Pages site.
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    html, body { width: 1200px; height: 630px; overflow: hidden; }
+    .og { position: relative; width: 1200px; height: 630px; padding: 54px 64px; }
+    .og .wordmark { font-size: 34px; }
+    .og .wordmark svg { width: 18px; height: 18px; }
+    .og h1 {
+      margin: 58px 0 0;
+      font-family: var(--serif);
+      font-weight: 340;
+      font-size: 112px;
+      line-height: 0.92;
+      letter-spacing: -0.035em;
+      font-variation-settings: "opsz" 144;
+    }
+    .og h1 em { font-style: italic; font-weight: 300; color: var(--rose); }
+    .og h1 .indent { display: block; padding-left: 0.9em; }
+    .og .foot {
+      position: absolute; left: 64px; bottom: 50px; right: 470px;
+      padding-top: 16px; border-top: 1px solid var(--ink);
+      color: var(--ink-soft);
+    }
+    .og .phone { position: absolute; width: 330px; right: 90px; top: 70px; transform: rotate(4deg); }
+  </style>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute">
+    <symbol id="spark" viewBox="0 0 100 100"><path d="M50 0C54 28 72 46 100 50 72 54 54 72 50 100 46 72 28 54 0 50 28 46 46 28 50 0Z"/></symbol>
+  </svg>
+  <div class="og">
+    <span class="wordmark">Losia <svg><use href="#spark"/></svg></span>
+    <h1 id="title"></h1>
+    <div class="foot eyebrow" id="foot"></div>
+    <div class="phone"><img id="shot" alt=""></div>
+  </div>
+  <script>
+    const en = new URLSearchParams(location.search).get("lang") === "en";
+    document.getElementById("title").innerHTML = en
+      ? '<span>Your mornings,</span><span class="indent"><em>evenings,</em></span><span>your shelf.</span>'
+      : '<span>Sabahın,</span><span class="indent"><em>akşamın,</em></span><span>dolabın.</span>';
+    document.getElementById("foot").textContent = en
+      ? "Skincare routine & product shelf · No ads, no account"
+      : "Cilt bakım rutini ve ürün dolabı · Reklam yok, hesap yok";
+    document.getElementById("shot").src = `../assets/screens/${en ? "en" : "tr"}-01.webp`;
+  </script>
+</body>
+</html>
