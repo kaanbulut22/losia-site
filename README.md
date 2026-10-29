@@ -13,6 +13,9 @@ trackers; the fonts (Fraunces, Instrument Sans) are self-hosted.
 - `_tools/og.html`: source of the share images (`assets/og-*.png`), rendered
   at 1200×630 with a headless browser; folders starting with `_` are not
   published by GitHub Pages
+- `_tools/cover.html`: source of the social media covers (X 1500×500,
+  Facebook 1640×624; the app repository keeps them in `store/graphics/`).
+  `?v=e` is the one in use; render at 2× and scale down for sharp screens
 
 To preview locally, serve the folder (opening the files directly breaks the
 folder links and the fonts):
