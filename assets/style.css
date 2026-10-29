@@ -350,7 +350,7 @@ a {
 
 .index ol {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -878,7 +878,39 @@ a {
   }
 }
 
-/* ---------- Chapter 03: list & spending ---------- */
+/* ---------- Routine mode: three phones in a row ---------- */
+
+.mode {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+
+.mode-intro {
+  grid-column: 1 / span 7;
+}
+
+.mode-figures {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 4vw, 64px);
+  margin-top: clamp(32px, 5vw, 64px);
+  align-items: start;
+}
+
+.mode-figures figure {
+  margin: 0;
+  width: 100%;
+  max-width: 300px;
+  justify-self: center;
+}
+
+.mode-figures figure:nth-child(2) {
+  margin-top: 56px;
+}
+
+/* ---------- Chapter 04: list & spending ---------- */
 
 .pair {
   display: grid;
@@ -1265,7 +1297,7 @@ figcaption i {
     grid-template-columns: 1fr 1fr;
   }
 
-  .index li:nth-child(3) {
+  .index li:nth-child(2n + 3) {
     border-left: 0;
   }
 
@@ -1273,7 +1305,7 @@ figcaption i {
     border-top: 1px solid var(--line);
   }
 
-  .index li:nth-child(3) a {
+  .index li:nth-child(2n + 3) a {
     padding-left: 0;
   }
 }
@@ -1281,6 +1313,25 @@ figcaption i {
 @media (max-width: 600px) {
   body {
     font-size: 16px;
+  }
+
+  .mode-intro {
+    grid-column: 1 / -1;
+  }
+
+  .mode-figures {
+    grid-template-columns: repeat(3, 72%);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 8px;
+  }
+
+  .mode-figures figure {
+    scroll-snap-align: start;
+  }
+
+  .mode-figures figure:nth-child(2) {
+    margin-top: 0;
   }
 
   .masthead nav .nav-link {
