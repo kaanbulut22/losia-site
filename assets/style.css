@@ -1050,6 +1050,38 @@ figcaption i {
   margin-top: 22px;
 }
 
+/* Follow links: round ink buttons with the brand mark in the paper color. */
+.footer-cols .social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-cols .social li {
+  padding: 0;
+}
+
+.footer-cols .social a {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--ink);
+  transition: background-color 0.2s ease;
+}
+
+.footer-cols .social a:hover,
+.footer-cols .social a:focus-visible {
+  background: var(--rose);
+}
+
+.footer-cols .social svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--paper);
+}
+
 .footer-cols a {
   text-decoration: none;
 }
