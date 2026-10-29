@@ -1046,6 +1046,10 @@ figcaption i {
   padding: 3px 0;
 }
 
+.footer-cols ul + h4 {
+  margin-top: 22px;
+}
+
 .footer-cols a {
   text-decoration: none;
 }
