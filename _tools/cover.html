@@ -70,10 +70,14 @@
     .a.d.e .phone.dark { background: #0a0809; box-shadow: 0 0 0 1.5px #3a3236 inset, 0 40px 70px -20px rgba(40, 5, 20, 0.65); }
     /* The site puts white behind screenshots; on the dark one it shows as a broken line along the edges. */
     .a.d.e .phone.dark img { background: #0a0809; }
-    .fb.a.d.e .wordmark { left: 18.6%; }
-    .fb.a.d.e h1, .fb.a.d.e .en, .fb.a.d.e .foot { left: 19%; }
-    .fb.a.d.e .foot { top: 67%; }
-    .fb.a.d.e .phone { width: calc(var(--u) * 33); }
+    /* The Facebook app shows only the middle ~55% (about 1.45:1) and puts the profile photo over the
+       lower middle, so text sits upper left of that window and the phones to the right of the photo. */
+    .fb.a.d.e .wordmark { left: 24%; top: 5%; font-size: calc(var(--u) * 15); }
+    .fb.a.d.e h1, .fb.a.d.e .en { left: 24.3%; }
+    .fb.a.d.e h1 { top: 34%; font-size: calc(var(--u) * 5.6); }
+    .fb.a.d.e .en { top: 45%; font-size: calc(var(--u) * 3.1); }
+    .fb.a.d.e .foot { display: none; }
+    .fb.a.d.e .phone { width: calc(var(--u) * 25); }
 
     /* Facebook: phones show only the middle 640x360 share, so everything moves inward. */
     .fb.a h1 { left: 19%; top: 14%; font-size: calc(var(--u) * 15.5); }
@@ -109,7 +113,7 @@
     if (v === "a" || v === "d" || v === "e") {
       const rose = v !== "a";
       const sparks = !rose ? "" : v === "e"
-        ? (fb ? spark(22, 84, 4, 0.25) + spark(45, 12, 5, 0.3) + spark(81, 6, 4, 0.3)
+        ? (fb ? spark(10, 20, 6, 0.3) + spark(52, 10, 4, 0.3) + spark(86, 70, 6, 0.25) + spark(80, 6, 3, 0.3)
               : spark(4, 14, 6, 0.3) + spark(52, 8, 4, 0.3) + spark(97, 8, 4, 0.3))
         : fb
           ? spark(21, 80, 4, 0.25) + spark(57, 10, 5, 0.3) + spark(78, 78, 6, 0.22)
@@ -120,9 +124,9 @@
         : "Cilt bakım rutini ve ürün dolabı · Skincare routine &amp; shelf";
       // Side phones first so the dark one in the middle sits on top.
       const phones = v !== "e" ? phone("tr-01", "") : fb
-        ? phone("tr-01", "right:38.5%;top:30%;transform:rotate(-6deg)") +
-          phone("tr-02", "right:18%;top:30%;transform:rotate(6deg)") +
-          phone("tr-dark-01", "right:28%;top:12%", "dark")
+        ? phone("tr-01", "right:36%;top:26%;transform:rotate(-6deg)") +
+          phone("tr-02", "right:23.5%;top:26%;transform:rotate(6deg)") +
+          phone("tr-dark-01", "right:29.5%;top:9%", "dark")
         : phone("tr-01", "right:29%;top:30%;transform:rotate(-6deg)") +
           phone("tr-02", "right:2.5%;top:30%;transform:rotate(6deg)") +
           phone("tr-dark-01", "right:15.5%;top:12%", "dark");
@@ -152,9 +156,11 @@
         const s = H * 0.5;
         g.innerHTML = `<div class="avatar" style="left:${W * 0.015}px;top:${H - s * 0.5}px;width:${s}px;height:${s}px"></div>`;
       } else {
-        // Facebook: the phone shows the middle 640x360 share; the desktop photo sits over the lower left.
-        const cw = H * 640 / 360, s = H * 0.55;
+        // Facebook: the app shows the middle ~1.45:1 with the photo over the lower middle;
+        // the desktop photo sits over the lower left.
+        const cw = H * 1.45, s = H * 0.55, m = H * 0.61;
         g.innerHTML = `<div class="crop" style="left:${(W - cw) / 2}px;width:${cw}px"></div>
+          <div class="avatar" style="left:${(W - m) / 2}px;top:${H * 0.625}px;width:${m}px;height:${m}px"></div>
           <div class="avatar" style="left:${W * 0.02}px;top:${H - s * 0.45}px;width:${s}px;height:${s}px"></div>`;
       }
       cover.appendChild(g);
