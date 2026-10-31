@@ -28,7 +28,7 @@ Losia bir **güzellik/yaşam tarzı** uygulamasıdır; sağlık/tıbbi uygulama 
 ## Site kuralları
 - **TR ve EN sayfalar senkron:** `index.html` ↔ `en/index.html`, `gizlilik/` ↔ `en/privacy/`. Birinde yapılan metin, bölüm, görsel değişikliği diğerine de yapılır. Ekran görüntüleri `assets/screens/tr-*.webp` ve `en-*.webp` çiftleri olarak aynı ekranı göstermeli.
 - **Gizlilik politikası** `D:\losia\docs\privacy-policy.md` ile aynı metindir. Orada değişirse burada da güncellenir (uygulama oturumundan haber gelir); burada kendiliğinden farklı bir şey yazılmaz.
-- **Gizlilik adresleri kalıcı:** `/losia-site/gizlilik/` ve `/losia-site/en/privacy/` uygulamanın içinden (commit bc29417) ve Play Console'dan bağlanıyor; yolları değiştirme, klasörleri taşıma. Eski `losia-privacy` sayfasının kapatılması uygulama oturumunda takipte.
+- **Gizlilik adresleri kalıcı:** `/losia-site/gizlilik/` ve `/losia-site/en/privacy/` uygulamadan ve Play Console'dan bağlanıyor; yolları değiştirme. Politika yalnızca iki yerde tutulur: `D:\losia\docs\privacy-policy.md` ve sitedeki bu iki sayfa. Eski `losia-privacy` deposu yalnızca buraya yönlendirir, güncellenmez.
 - Ekran görüntüleri telefondan alınır (uygulamanın örnek yedeği, `D:\losia\store\screenshots\make-sample-backup.mjs`), 720×1600 webp'ye çevrilir. Kaynak kopyalar `D:\losia-sosyal\kaynaklar\ekranlar\`'da da durur.
 - Yerel önizleme için klasörü sunucuyla aç (`python -m http.server 8765`); dosyayı doğrudan açınca klasör bağlantıları (`en/`, `gizlilik/`) ve yazı tipleri çalışmaz.
 - Paylaşım görselleri `_tools/og.html`'den headless tarayıcıyla 1200×630 üretilir. `_` ile başlayan klasörler yayınlanmaz.
