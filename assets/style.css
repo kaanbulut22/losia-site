@@ -886,8 +886,13 @@ a {
   gap: 24px;
 }
 
+/* Headline runs the full width; the paragraphs keep seven columns */
 .mode-intro {
-  grid-column: 1 / span 7;
+  grid-column: 1 / -1;
+}
+
+.mode-intro p {
+  max-width: calc((100% - 11 * 24px) * 7 / 12 + 6 * 24px);
 }
 
 .mode-figures {
@@ -1315,8 +1320,8 @@ figcaption i {
     font-size: 16px;
   }
 
-  .mode-intro {
-    grid-column: 1 / -1;
+  .mode-intro p {
+    max-width: none;
   }
 
   .mode-figures {
