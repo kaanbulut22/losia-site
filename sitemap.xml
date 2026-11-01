@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://kaanbulut22.github.io/losia-site/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://kaanbulut22.github.io/losia-site/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kaanbulut22.github.io/losia-site/en/"/>
+  </url>
+  <url>
+    <loc>https://kaanbulut22.github.io/losia-site/en/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://kaanbulut22.github.io/losia-site/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kaanbulut22.github.io/losia-site/en/"/>
+  </url>
+  <url>
+    <loc>https://kaanbulut22.github.io/losia-site/gizlilik/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://kaanbulut22.github.io/losia-site/gizlilik/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kaanbulut22.github.io/losia-site/en/privacy/"/>
+  </url>
+  <url>
+    <loc>https://kaanbulut22.github.io/losia-site/en/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://kaanbulut22.github.io/losia-site/gizlilik/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kaanbulut22.github.io/losia-site/en/privacy/"/>
+  </url>
+</urlset>
